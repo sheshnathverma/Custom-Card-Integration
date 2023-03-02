@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enate Card Integration</title>
+    <style>
+      .actions {
+        margin-bottom: 20px;
+      }
+      .result {
+        margin-top: 40px;
+      }
+      button {
+        margin: 0.1em;
+        padding: 0.5em;
+        cursor: pointer;
+        font-size: 1.15em;
+        color: #ffffff;
+        font-weight: 400;
+        background-color: #000;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="actions">
+        <button type="button" id="btn-get-info">
+          Get Work item information
+        </button>
+        <button type="button" id="btn-update-info">
+          Update Work item Title
+        </button>
+        <button type="button" id="btn-add-validation">Add Validation</button>
+        <button type="button" id="btn-remove-validation">
+          Remove Validation
+        </button>
+        <button type="button" id="btn-call-enate-api">
+          Get Logged-In User information by Calling Enate API
+        </button>
+        <button type="button" id="btn-call-any-other-api">
+          Call Any Other API
+        </button>
+      </div>
+      <div class="result"></div>
+    </div>
+    <script src="./src/app.js"></script>
+  </body>
+</html>
