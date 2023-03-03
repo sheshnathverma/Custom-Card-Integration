@@ -6,4 +6,4 @@ We have listed some sample/example related to common use case related to custom 
 
 ## 1. Custom card with Iframe
 
-Please iframe folder and follow readme.md file instruction
+Please iframe folder and follow readme.md file instruction.
