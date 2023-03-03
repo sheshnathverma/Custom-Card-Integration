@@ -1,6 +1,6 @@
 (() => {
     
-    const enateAppUrl = new URL("<enate application instance url>");
+    const enateAppUrl = new URL("http://en8-b37-sheshn.enate.local/v232local/");
 
     // send message to top window
     const callbackMap = {};
