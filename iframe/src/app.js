@@ -1,6 +1,7 @@
 (() => {
-    
-    const enateAppUrl = new URL("https://en8-b37-sheshn.enate.local/v232local/");
+
+    /// { href: string, origin: string, url: URL }
+    const topWindowInfo = { href: null, origin: null, url: null };
 
     // send message to top window
     const callbackMap = {};
@@ -8,7 +9,7 @@
         const token = Date.now() + " - " + performance.now();
         const src = location.href.toLowerCase()
         callbackMap[token] = fn || (() => { });
-        top.postMessage({ src, token, data }, enateAppUrl.origin);
+        top.postMessage({ src, token, data }, topWindowInfo.origin);
     };
 
     // message listener from other window to this
@@ -17,6 +18,13 @@
         if (typeof fn === "function") {
             delete callbackMap[e.data.token];
             fn(e.data.data);
+        } else {
+            if (e.data?.type === 'topWindowInfo') {
+                Object.assign(topWindowInfo, e.data);
+                topWindowInfo.url = new URL(topWindowInfo.href);
+                topWindowInfo.origin = url.origin;
+                Object.freeze(topWindowInfo);
+            }
         }
     });
 
