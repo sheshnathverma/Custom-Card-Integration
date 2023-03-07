@@ -19,8 +19,9 @@
             delete callbackMap[e.data.token];
             fn(e.data.data);
         } else {
-            if (e.data?.type === 'topWindowInfo') {
-                Object.assign(topWindowInfo, e.data);
+            const d = e.data?.data || {};
+            if (d.type === 'topWindowInfo') {
+                Object.assign(topWindowInfo, d);
                 topWindowInfo.url = new URL(topWindowInfo.href);
                 topWindowInfo.origin = url.origin;
                 Object.freeze(topWindowInfo);
