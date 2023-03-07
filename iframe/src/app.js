@@ -23,7 +23,7 @@
             if (d.type === 'topWindowInfo') {
                 Object.assign(topWindowInfo, d);
                 topWindowInfo.url = new URL(topWindowInfo.href);
-                topWindowInfo.origin = url.origin;
+                topWindowInfo.origin = topWindowInfo.url.origin;
                 Object.freeze(topWindowInfo);
             }
         }
